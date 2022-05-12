@@ -1,0 +1,10 @@
+<app-add-todo (toDoAdd)="addToDo($event)"></app-add-todo>
+
+<div *ngFor="let todo of toDos">
+  <app-todo-item
+    [todo]="todo"
+    (toDoDelete)="deleteToDo($event)"
+  ></app-todo-item>
+</div>
+
+<p *ngIf="this.toDos.length === 0">No to dos to display</p>
